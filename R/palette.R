@@ -2,7 +2,6 @@
 #'
 #' @param ... Which colours to return
 #'
-#' @return
 #' @export
 #'
 #' @examples
@@ -52,7 +51,7 @@ inky_pal <- function(palette = "inky_basic", reverse = FALSE, ...) {
 
   if (reverse) pal <- rev(pal)
 
-  colorRampPalette(pal, ...)
+  grDevices::colorRampPalette(pal, ...)
 }
 
 #' Construct a fill palette

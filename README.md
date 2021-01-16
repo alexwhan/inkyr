@@ -5,7 +5,7 @@
 [![R-CMD-check](https://github.com/alexwhan/inkyr/workflows/R-CMD-check/badge.svg)](https://github.com/alexwhan/inkyr/actions)
 <!-- badges: end -->
 
-This is a very basic package, primarily to define a palette for the [inky impression](https://shop.pimoroni.com/products/inky-impression) to use in R, and maybe do other stuff in future.
+This is an R package with basic funcationality for generating output for the [inky impression](https://shop.pimoroni.com/products/inky-impression). The primary functionality at the moment defines a palette, and a way to output ggplot objects that fit the impression.
 
 ## Installation
 
@@ -22,9 +22,8 @@ Here's a simple use of the inky palette for ggplot.
 ``` r
 library(inkyr)
 library(ggplot2)
-library(tidyr)
 
-df <- crossing(x = 1:19, y = 1:16)
+df <- expand.grid(x = 1:19, y = 1:16)
 df$hex <- sample(factor(1:7), nrow(df), replace = TRUE)
 
 ggplot(df, aes(x, y)) +
@@ -34,3 +33,8 @@ ggplot(df, aes(x, y)) +
   coord_cartesian(expand = FALSE)
 ```
 
+And to export for the impression:
+
+``` r
+inkysave(p, "filename.jpg")
+```

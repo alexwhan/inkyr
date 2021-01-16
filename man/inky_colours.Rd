@@ -9,9 +9,6 @@ inky_colours(...)
 \arguments{
 \item{...}{Which colours to return}
 }
-\value{
-
-}
 \description{
 Clour definitions
 }
