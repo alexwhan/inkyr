@@ -44,7 +44,7 @@ inky_2d_space <- function(colours, x = 20, y = 14) {
 inky_2d_fig <- function(colours, x = 20, y = 14) {
   df <- inky_2d_space(colours, x, y)
 
-  pal <- setNames(df$col, df$col)
+  pal <- stats::setNames(df$col, df$col)
 
   p <- ggplot(df, aes(x, y)) +
     ggplot2::geom_tile(aes(fill = col)) +

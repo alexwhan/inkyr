@@ -1,4 +1,4 @@
 ## usethis namespace: start
-#' @importFrom ggplot2 ggplot aes geom_tile
+#' @import ggplot2
 ## usethis namespace: end
 NULL
