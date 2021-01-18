@@ -1,16 +1,26 @@
+---
+output: github_document
+---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
 
 # inkyr
 
 <!-- badges: start -->
-
 [![R-CMD-check](https://github.com/alexwhan/inkyr/workflows/R-CMD-check/badge.svg)](https://github.com/alexwhan/inkyr/actions)
 <!-- badges: end -->
 
-This is an R package with basic functionality for generating output for
-the [inky
-impression](https://shop.pimoroni.com/products/inky-impression).
+This is an R package with basic functionality for generating output for the [inky impression](https://shop.pimoroni.com/products/inky-impression).
 
 ## Installation
 
@@ -22,9 +32,9 @@ remotes::install_github('alexwhan/inkyr')
 
 ## Using a ggplot inky scale
 
-Here’s a simple use of the inky palette for ggplot.
+Here's a simple use of the inky palette for ggplot.
 
-``` r
+``` {r demo1}
 library(inkyr)
 library(ggplot2)
 
@@ -41,8 +51,6 @@ p <- ggplot(df, aes(x, y)) +
 p
 ```
 
-<img src="man/figures/README-demo1-1.png" width="100%" />
-
 And to export for the impression:
 
 ``` r
@@ -51,13 +59,11 @@ inkysave(p, "filename.jpg")
 
 ## Generating an example gradient
 
-The `inky_2d_fig` function lets you can define four colours, and builds
-gradients between for inky output.
+The `inky_2d_fig` function lets you can define four colours, and builds gradients between for inky output.
 
-``` r
+``` {r gradient-demo}
 p <- inky_2d_fig(inky_colours()[3:6])
 
 p
-```
 
-<img src="man/figures/README-gradient-demo-1.png" width="100%" />
+```
